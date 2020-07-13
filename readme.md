@@ -36,7 +36,7 @@ music
 
 ## 数据库关系（MySQL）
 
-![](./er.PNG)
+![](https://github.com/AutonomousCrazyshaking/music/blob/master/er.PNG)
 
 ## 运行
 
