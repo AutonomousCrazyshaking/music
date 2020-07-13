@@ -36,7 +36,7 @@ music
 
 ## 数据库关系（MySQL）
 
-![](er.PNG)
+![](./er.PNG)
 
 ## 运行
 
