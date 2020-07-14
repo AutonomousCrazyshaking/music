@@ -6,7 +6,7 @@ from django.db.models import Q, F
 from django.contrib.auth import login, logout
 from django.contrib.auth.hashers import check_password
 from django.contrib.auth.decorators import login_required
-from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from common.paginator import cPaginator as Paginator
 
 
 def loginView(request):
@@ -46,12 +46,7 @@ def homeView(request, page):
     searchs = Dynamic.objects.select_related('song').order_by('-search').all()[:4]
     songs = request.session.get('play_list', [])
     paginator = Paginator(songs, 3)
-    try:
-        pages = paginator.page(page)
-    except PageNotAnInteger:
-        pages = paginator.page(1)
-    except EmptyPage:
-        pages = paginator.page(paginator.num_pages)
+    pages = paginator.page(page)
     return render(request, 'home.html', locals())
 
 
